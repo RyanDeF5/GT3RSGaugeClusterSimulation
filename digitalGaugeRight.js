@@ -31,6 +31,10 @@ export class InfotainmentSystem{
 
   update(){
     this.infoRPM.textContent = `RPM: ${Math.round(carMetrics.scaledRPM)}`
+
+    // if (carMetrics.scaledRPM > 9000) this.infoRPM.style.color = "red"
+    // else this.infoRPM.style.color = "white"
+    
     if (carMetrics.gear === 1)
       this.infoGEAR.textContent = `Gear: ${carMetrics.gear}st`
     else if (carMetrics.gear === 2)
