@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Porshe</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="mainStyle.css">
+    <link rel="stylesheet" href="gaugeStyle.css">
+    <link rel="stylesheet" href="digitalGaugeRight.css">
+    <script type="module" src="script.js" defer></script>
+
+  </head>
+  <body>
+    <div id="headerBar">
+      <div id="pageTitle">Gauge Cluster Simulation</div>
+    </div>
+    <div id="GaugeContainer">
+      <div id="OnOffIndicator">Power: OFF</div>
+      <div id="TransmissionReport">+upshift</div>
+       <!-- #region Center Gauge -->
+      <div id="gaugeRow"></div>
+      <img id="gaugeMask" src="images/PorsheGauge2.png">
+      <img id="needle" src="images/Needle_Test.png">
+      <div id="rpmIndicator1" class="rpmIndicator"></div>
+      <div id="rpmIndicator2" class="rpmIndicator"></div>
+      <div id="rpmIndicator3" class="rpmIndicator"></div>
+      <div id="rpmIndicator4" class="rpmIndicator"></div>
+      <div id="rpmIndicator5" class="rpmIndicator"></div>
+      <div id="rpmIndicator6" class="rpmIndicator"></div>
+      <div id="rpmIndicator7" class="rpmIndicator"></div>
+      <div id="rpmIndicator8" class="rpmIndicator"></div>
+      <div id="rpmIndicator9" class="rpmIndicator"></div>
+      <div id="rpmIndicator10" class="rpmIndicator"></div>
+      <div id="rpmIndicator11" class="rpmIndicator"></div>
+      <div id="rpmIndicator12" class="rpmIndicator"></div>
+      <div id="rpmIndicator13" class="rpmIndicator"></div>
+      <div id="rpmIndicator14" class="rpmIndicator"></div>
+      <div id="rpmIndicator15" class="rpmIndicator"></div>
+      <div id="rpmIndicator16" class="rpmIndicator"></div>
+      <div id="rpmIndicator17" class="rpmIndicator"></div>
+      <div id="rpmIndicator18" class="rpmIndicator"></div>
+      <div id="rpmIndicator19" class="rpmIndicator"></div>
+      <div id="rpmIndicator20" class="rpmIndicator"></div>
+      <div id="rpmIndicator21" class="rpmIndicator"></div>
+      <div id="rpmIndicator22" class="rpmIndicator"></div>
+      <div id="rpmIndicator23" class="rpmIndicator"></div>
+      <div id="rpmIndicator24" class="rpmIndicator"></div>
+      <div id="rpmIndicator25" class="rpmIndicator"></div>
+      <div id="rpmIndicator26" class="rpmIndicator"></div>
+      <div id="rpmIndicator27" class="rpmIndicator"></div>
+      <div id="rpmIndicator28" class="rpmIndicator"></div>
+      <div id="rpmIndicator29" class="rpmIndicator"></div>
+      <div id="rpmIndicator30" class="rpmIndicator"></div>
+      <div id="rpmIndicator31" class="rpmIndicator"></div>
+      <div id="rpmIndicator32" class="rpmIndicator"></div>
+      <div id="rpmIndicator33" class="rpmIndicator"></div>
+      <div id="rpmIndicator34" class="rpmIndicator"></div>
+      <div id="rpmIndicator35" class="rpmIndicator"></div>
+      <div id="rpmIndicator36" class="rpmIndicator"></div>
+      <div id="digitalGaugeContainer">
+        <div id="digitalGauge">0</div>
+        <div id="mphSymbol">mph</div>
+        <div id="gearNumber">0</div>
+      </div>
+      <!-- #endregion -->
+      <div id="GaugeRightContainer">
+      </div>
+      <div id="RightMask1"></div>
+      <div id="GaugeLeftContainer">
+        <div class="infographic" id="infographicRPM">RPM: 0</div>
+        <div class="infographic" id="infographicGEAR">Current: 0</div>
+      </div>
+      <div id="LeftMask1"></div>
+    </div>
+    <div id="controlRow">
+        <div id="controlColum">
+          <div id="buttonRow">
+            <button id="carStartButton">Engine Start On/Off</button>
+        </div>
+        <div id="buttonRow">
+          <button id="DownButton">- 10</button>
+          <button id="UpButton">+ 10</button>
+          <button id="TransmissionToggle">Trans: Automatic</button>
+        </div>
+        <div id="buttonRow">
+          <button id="DownShiftButton">DownShift</button>
+          <button id="carButtonTest">Span Test</button>
+          <button id="carButtonOnOff">Physics OFF</button>
+          <button id="UpShiftButton">UpShift</button>
+        </div>
+        <div id="buttonRow">
+          <button id="pedalBrake">Brake</button>
+          <button id="pedalGas">Throttle</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

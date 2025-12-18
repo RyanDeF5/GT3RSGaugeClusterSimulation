@@ -1,0 +1,113 @@
+#GaugeContainer {
+  position: relative;
+  width: 1500px;
+  height: 370px;
+  margin-bottom: -15px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color:  #132227;
+}
+
+#OnOffIndicator{
+  position: absolute;
+  top: 5%;
+  left: 400px;
+  font-family: "Barlow Semi Condensed";
+  font-size: 30px;
+  font-weight: 600;
+  color: white;
+}
+
+/* #TransmissionReport{
+  position: absolute;
+  top: 6%;
+  left: 950px;
+  font-family: "Barlow Semi Condensed";
+  font-size: 30px;
+  font-weight: 600;
+  color: white;
+} */
+
+#gaugeMask{
+  position: absolute;
+  width: 530px; height: 524px; 
+  top: 0%;
+  left: 480px;
+  z-index: 1;
+}
+
+#needle {
+  height: 290px;
+  position: absolute;
+  left: 50%;
+  top: 30px;
+  transform-origin: 50% 73%;
+  transform: translateX(-50%) rotate(0deg);
+  transition: transform 0.15s ease-out;
+  z-index: 4;
+}
+
+#digitalGaugeContainer{
+  position: absolute;
+  width: 200px;
+  height: 80px;
+  top: 290px;
+  left: 645px;
+  background-color: black;
+}
+
+#digitalGauge{
+  font-family: "Barlow Semi Condensed";
+  position: absolute;
+  text-align: right;
+  left: 88px;
+  bottom: 10px;
+  font-weight: 600;
+  font-size: 65px;
+  color: black;
+  transition: color 0.5s ease-out;
+}
+
+#gearNumber{
+  font-family: "Barlow Semi Condensed";
+  position: absolute;
+  text-align: right;
+  right: 25px;
+  top: -5px;
+  font-weight: 600;
+  font-size: 40px;
+  color: black;
+  transition: color 0s ease-out;
+}
+
+#mphSymbol{
+  font-family: "Barlow Semi Condensed";
+  font-weight: 700;
+  position: absolute;
+  left: 90px;
+  bottom: 3px;
+  color: #132227;
+}
+
+.rpmIndicator{
+  position: absolute;
+  height: 10px;
+  width: 30px;
+  left: 480px;
+  top: 190px;
+  background-color: gray;
+  transition: background-color 0.01s ease-out;
+  transform: translateX(-50%) rotate(0deg);
+}
+
+
+/* #gaugeRow{
+  height: 370px;
+  display: flex;
+  justify-content: center; align-items: center;
+  background: radial-gradient(
+    circle at center,
+    #132227 100%,      
+    #ffffff 50%     
+  );
+} */

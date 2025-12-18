@@ -1,0 +1,66 @@
+#GaugeLeftContainer{
+  position: absolute;
+  border: 5px solid #132227;
+  background-color: rgba(255, 255, 255, 0);
+  top: 215px;
+  left: 315px; 
+  transform: translate(-50%, -50%);
+  transition: border-color 1s ease-in;
+  border-radius: 300px;
+  width: 300px;
+  height: 300px;
+}
+
+#LeftMask1{
+  position: absolute;
+  background-color:  #132227;
+  /* border: 5px solid white; */
+  bottom: 0%;
+  left: 190px; 
+  width: 300px;
+  height: 35px;
+  z-index: 3;
+}
+
+#GaugeRightContainer{
+  position: absolute;
+  border: 5px solid #132227;
+  background-color: rgba(255, 255, 255, 0);
+  top: 215px;
+  left: 1185px; 
+  transform: translate(-50%, -50%);
+  transition: border-color 1s ease-in;
+  border-radius: 300px;
+  width: 300px;
+  height: 300px;
+}
+
+#RightMask1{
+  position: absolute;
+  background-color:  #132227;
+  /* border: 5px solid white; */
+  bottom: 0%;
+  left: 1030px; 
+  width: 300px;
+  height: 35px;
+  z-index: 3;
+}
+
+.infographic{
+  position: absolute;
+  color: #132227;
+  font-family: "Barlow Semi Condensed";
+  font-size: 25px;
+  font-weight: 600;
+  /* transition: color 0.5s ease-in; */
+}
+
+#infographicRPM{
+  top:80px;
+  left: 30px;
+}
+
+#infographicGEAR{
+  top:110px;
+  left: 30px;
+}
