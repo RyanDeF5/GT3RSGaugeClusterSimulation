@@ -3,7 +3,7 @@ import { DigitalGauge } from "./digitalGauge.js";
 import { RpmIndicatorRow } from "./rpmIndicatorRow.js"
 import { carMetrics, update } from "./controlModule.js";
 import { GearBox } from "./gearbox.js";
-import { InfotainmentSystem } from "./digitalGaugeRight.js";
+import { InfotainmentSystem } from "./digitalInfotainmentSystem.js";
 
 let on = false; // Determines the 'car' power state
 let gaugeBusy = false; // Determines whether the car is in the start animation
@@ -62,7 +62,7 @@ togglePhysics();
 function toggleOnOff(){
   if (on){
     on = false
-    infotainmentSystem.closeGauge();
+    infotainmentSystem.turnOff();
     document.getElementById("OnOffIndicator").textContent = 'Power: OFF'
     digitalIndicator.setOff(); 
     rpmIndicatorLeft.turnOffAll(); rpmIndicatorRight.turnOffAll();
@@ -76,7 +76,7 @@ function toggleOnOff(){
     carMetrics.throttleValue = 4;
   } else {
     on = true
-    infotainmentSystem.openGauge(); 
+    infotainmentSystem.turnOn(); 
     rpmIndicatorLeft.startUpTest(); rpmIndicatorRight.startUpTest();
     rpmIndicatorLeft.turnOffAll(); rpmIndicatorRight.turnOffAll();
     document.getElementById("OnOffIndicator").textContent = 'Power: ON'
