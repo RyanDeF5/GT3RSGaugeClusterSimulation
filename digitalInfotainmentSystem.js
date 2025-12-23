@@ -7,37 +7,41 @@ export class InfotainmentSystem{
     this.infoGEAR = document.getElementById("infographicGEAR")
     this.logoRight = document.getElementById("porscheLogoRight")
     this.logoLeft = document.getElementById("porscheLogoLeft")
+    this.carModel1 = document.getElementById("carModel1");
   }
 
   turnOn(){
-    this.gaugeL.style.transition = "border-color 1s ease-out"; 
-    this.gaugeR.style.transition = "border-color 1s ease-out"; 
+    this.logoRight.pauseGif
+    this.gaugeL.style.transition = "border-color 0.0s ease-out"; 
+    this.gaugeR.style.transition = "border-color 0.0s ease-out"; 
     this.logoRight.style.transition = "opacity 1.3s linear"; 
     this.logoLeft.style.transition = "opacity 1.3s linear"; 
     this.logoRight.style.opacity = 1.0;
     this.logoLeft.style.opacity = 1.0;
-
+    this.gaugeL.style.borderColor = "#cfd3d4"
+    this.gaugeR.style.borderColor = "#cfd3d4"
     setTimeout(()=>{
-      this.gaugeL.style.borderColor = "#cfd3d4"
-      this.gaugeR.style.borderColor = "#cfd3d4"
-    }, 1100)
-    setTimeout(()=>{
-      this.logoRight.style.transition = "opacity 0.0s linear"; 
+    this.logoRight.style.transition = "opacity 0.0s linear"; 
     this.logoLeft.style.transition = "opacity 0.0s linear"; 
-      this.logoRight.style.opacity = 0.0;
+    this.logoRight.style.opacity = 0.0;
     this.logoLeft.style.opacity = 0.0;
-      this.infoRPM.style.color = "white"
-      this.infoGEAR.style.color = "white"
+    this.infoRPM.style.color = "white"
+    this.infoGEAR.style.color = "white"
+    this.carModel1.style.opacity = 1;
+    this.carModel1.play(); 
     }, 3400)
   }
 
   turnOff(){
+    this.carModel1.style.opacity = 0;
     this.gaugeL.style.transition = "border-color 0.0s ease-out"; 
     this.gaugeR.style.transition = "border-color 0.0s ease-out"; 
+    this.gaugeL.style.backgroundColor = "transparent"
+    this.gaugeR.style.backgroundColor = "transparent"
     this.gaugeL.style.borderColor = "#444747ff" 
     this.gaugeR.style.borderColor = "#444747ff" 
-    this.infoRPM.style.color = "#132227"
-    this.infoGEAR.style.color = "#132227"
+    this.infoRPM.style.color = "black"
+    this.infoGEAR.style.color = "black"
   }
 
   update(){

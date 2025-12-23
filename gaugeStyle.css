@@ -5,7 +5,7 @@
   margin-bottom: -15px;
   margin-left: auto;
   margin-right: auto;
-  background-color:  #132227;
+  background-color:  black;
 }
 
 #OnOffIndicator{
@@ -51,9 +51,8 @@
   position: absolute;
   width: 200px;
   height: 80px;
-  top: 290px;
+  top: 285px;
   left: 645px;
-  background-color: black;
 }
 
 #digitalGauge{
@@ -86,7 +85,7 @@
   position: absolute;
   left: 90px;
   bottom: 3px;
-  color: #132227;
+  color: black;
 }
 
 .rpmIndicator{
@@ -101,13 +100,11 @@
 }
 
 
-/* #gaugeRow{
-  height: 370px;
-  display: flex;
-  justify-content: center; align-items: center;
-  background: radial-gradient(
-    circle at center,
-    #132227 100%,      
-    #ffffff 50%     
-  );
-} */
+#separationLine{
+  position: absolute;
+  background-color: rgb(65, 64, 64);
+  width: 280px; height: 2px;
+  left: 610px;
+  top: 286px; 
+
+}

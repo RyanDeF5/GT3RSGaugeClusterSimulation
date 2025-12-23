@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="mainStyle.css">
     <link rel="stylesheet" href="gaugeStyle.css">
-    <link rel="stylesheet" href="digitalGaugeRight.css">
+    <link rel="stylesheet" href="digitalGauges.css">
     <script type="module" src="script.js" defer></script>
 
   </head>
@@ -58,6 +58,7 @@
       <div id="rpmIndicator34" class="rpmIndicator"></div>
       <div id="rpmIndicator35" class="rpmIndicator"></div>
       <div id="rpmIndicator36" class="rpmIndicator"></div>
+      <div id="separationLine"></div>
       <div id="digitalGaugeContainer">
         <div id="digitalGauge">0</div>
         <div id="mphSymbol">mph</div>
@@ -65,11 +66,12 @@
       </div>
       <!-- #endregion -->
       <div id="GaugeRightContainer">
-        <img id="porscheLogoRight" src="images/porscheLogo.png">
+        <img id="porscheLogoRight" src="images/porscheLogo5.gif">
+        <video class="carModelAnimation" id="carModel1" src="images/carModel1.mp4" muted playsinline></video>
       </div>
       <div id="RightMask1"></div>
       <div id="GaugeLeftContainer">
-        <img id="porscheLogoLeft" src="images/porscheLogo.png">
+        <img id="porscheLogoLeft" src="images/porscheLogo5.gif">
         <div class="infographic" id="infographicRPM">RPM: 0</div>
         <div class="infographic" id="infographicGEAR">Current: 0</div>
       </div>
