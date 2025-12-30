@@ -9,6 +9,7 @@ export class InfotainmentSystem{
     this.logoRight = document.getElementById("porscheLogoRight")
     this.logoLeft = document.getElementById("porscheLogoLeft")
     this.carModel1 = document.getElementById("carModel1");
+    this.displayingMessage = false;
   }
 
   turnOn(){
@@ -31,6 +32,7 @@ export class InfotainmentSystem{
     this.infoSHIFTER.style.color = "#cfd3d4"
     this.carModel1.style.opacity = 1;
     this.carModel1.play(); 
+    this.setAlert("Car Is In Park!", 1500);
     }, 3500)
   }
 
@@ -58,6 +60,8 @@ export class InfotainmentSystem{
     else if (carMetrics.shifterPosition == "M") {shifterPosition = "Drive (Manual)"}
 
     this.infoSHIFTER.textContent = `Gear Mode: ${shifterPosition}`
+
+    // document.getElementById(`${shifterPosition.toLowerCase}Button`).borderColor = "red"
     
     if (carMetrics.gear === 1)
       this.infoGEAR.textContent = `Gear: ${carMetrics.gear}st`
@@ -66,4 +70,28 @@ export class InfotainmentSystem{
     else
       this.infoGEAR.textContent = `Gear: ${carMetrics.gear}rd`
   }
+
+  setAlert(message, timeDisplayed){
+    if (this.displayingMessage === false) {
+      this.displayingMessage = true;
+      document.getElementById("warningSign").style.opacity = 1;
+      document.getElementById("warningMessage").style.opacity = 1;
+      document.getElementById("warningMessage").textContent = `${message}`; 
+      this.infoRPM.style.color = "black"
+      this.infoGEAR.style.color = "black"
+      this.infoSHIFTER.style.color = "black"
+
+      setTimeout(() => {
+        document.getElementById("warningSign").style.opacity = 0;
+        document.getElementById("warningMessage").style.opacity = 0;;
+        document.getElementById("warningMessage").textContent = "none"; 
+        this.infoRPM.style.color = "white"
+        this.infoGEAR.style.color = "white"
+        this.infoSHIFTER.style.color = "white"
+        setTimeout(() => {this.displayingMessage = false;}, 500)
+      }, timeDisplayed)
+    }
+  }
+
 }
+

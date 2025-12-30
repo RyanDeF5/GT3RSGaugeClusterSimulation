@@ -90,6 +90,8 @@ function toggleOnOff(){
     digitalIndicator.select("P"); 
     startUpAnimation()
     needle.setAngle(engineIdle);
+    gearBox.setAutomatic();
+    document.getElementById("TransmissionToggle").textContent = 'Trans: Automatic'
   }
 }
 
@@ -104,6 +106,7 @@ function toggleTrans(){
     gearBox.setManual();
     document.getElementById("TransmissionToggle").textContent = 'Trans: Manual'
     digitalIndicator.select("M");
+    infotainmentSystem.setAlert("Auto Shifting Disabled", 2000);
     }
   }
 }
@@ -204,6 +207,7 @@ function throttle(){
       carMetrics.needleAngle = newAngle;
     }
   }
+  else { if (on && !gaugeBusy) {infotainmentSystem.setAlert("Car Is In Park!", 1000)}}
 }
 
 function brake(){

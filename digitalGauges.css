@@ -3,11 +3,13 @@
   border: 5px solid #444747ff;
   top: 215px;
   left: 315px; 
+  background-color: black;
   transform: translate(-50%, -50%);
   transition: border-color 1s ease-in;
   border-radius: 300px;
   width: 300px;
   height: 300px;
+  z-index: 5;
 }
 
 #LeftMask1{
@@ -18,7 +20,7 @@
   left: 190px; 
   width: 300px;
   height: 35px;
-  z-index: 3;
+  z-index: 10;
 }
 
 #GaugeRightContainer{
@@ -31,6 +33,7 @@
   border-radius: 300px;
   width: 300px;
   height: 300px;
+  z-index: 10;
 }
 
 #RightMask1{
@@ -41,7 +44,7 @@
   left: 1030px; 
   width: 300px;
   height: 35px;
-  z-index: 3;
+  z-index: 8;
 }
 
 .infographic{
@@ -79,6 +82,44 @@
   z-index: 4;
 }
 
+#warningSign{
+  height: 100px;
+  width: 330px;
+  position: absolute;
+  opacity: 0.0;
+  left: 50%;
+  top: 33%;
+  transition: opacity 0.0s linear;
+  transform: translateX(-50%) rotate(0deg);
+  z-index: 3;
+  -webkit-mask-image: radial-gradient(circle, black 100%, transparent 0%);
+  mask-image: radial-gradient(circle, black 85%, transparent 0%);
+}
+
+#warningMessageContainer{
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  position: absolute;
+  width: 180px;
+  height: 55px;
+  font-family: "Barlow Semi Condensed";
+  left: 105px;
+  top: 45%;
+  z-index: 3;
+  /* border-color: blue;
+  border-style: solid;
+  border-radius: 3px; */
+}
+
+#warningMessage{
+  font-family: "Barlow Semi Condensed";
+  opacity: 0;
+  color: white;
+  font-size: 25px;
+  font-weight: 600;
+}
+
 .carModelAnimation {
   position: absolute;
   width: 370px; 
@@ -91,3 +132,4 @@
   -webkit-mask-image: radial-gradient(circle, black 55%, transparent 0%);
   mask-image: radial-gradient(circle, black 55%, transparent 0%);
 }
+

@@ -3,7 +3,7 @@ import { carMetrics } from "./controlModule.js";
 export class GearBox {
   constructor(){
     this.rpm = 0;
-    this.manualGearbox = true;
+    this.manualGearbox = false;
     this.GEAR_COUNT = 6; 
     // this.UPPER_RPM_BOUNDS = 6000;
     // this.LOWER_RPM_BOUNDS = 1200;
