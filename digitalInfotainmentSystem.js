@@ -5,6 +5,7 @@ export class InfotainmentSystem{
     this.gaugeR = document.getElementById("GaugeRightContainer")
     this.infoRPM = document.getElementById("infographicRPM")
     this.infoGEAR = document.getElementById("infographicGEAR")
+    this.infoSHIFTER = document.getElementById("infographicShifterPos")
     this.logoRight = document.getElementById("porscheLogoRight")
     this.logoLeft = document.getElementById("porscheLogoLeft")
     this.carModel1 = document.getElementById("carModel1");
@@ -25,11 +26,12 @@ export class InfotainmentSystem{
     this.logoLeft.style.transition = "opacity 0.0s linear"; 
     this.logoRight.style.opacity = 0.0;
     this.logoLeft.style.opacity = 0.0;
-    this.infoRPM.style.color = "white"
-    this.infoGEAR.style.color = "white"
+    this.infoRPM.style.color = "#cfd3d4"
+    this.infoGEAR.style.color = "#cfd3d4"
+    this.infoSHIFTER.style.color = "#cfd3d4"
     this.carModel1.style.opacity = 1;
     this.carModel1.play(); 
-    }, 3400)
+    }, 3500)
   }
 
   turnOff(){
@@ -42,13 +44,20 @@ export class InfotainmentSystem{
     this.gaugeR.style.borderColor = "#444747ff" 
     this.infoRPM.style.color = "black"
     this.infoGEAR.style.color = "black"
+    this.infoSHIFTER.style.color = "black"
   }
 
   update(){
     this.infoRPM.textContent = `RPM: ${Math.round(carMetrics.scaledRPM)}`
 
-    // if (carMetrics.scaledRPM > 9000) this.infoRPM.style.color = "red"
-    // else this.infoRPM.style.color = "white"
+    let shifterPosition; 
+    if (carMetrics.shifterPosition == "P") {shifterPosition = "Park"}
+    else if (carMetrics.shifterPosition == "R") {shifterPosition = "Reverse"}
+    else if (carMetrics.shifterPosition == "N") {shifterPosition = "Neutral"}
+    else if (carMetrics.shifterPosition == "D") {shifterPosition = "Drive (Normal)"}
+    else if (carMetrics.shifterPosition == "M") {shifterPosition = "Drive (Manual)"}
+
+    this.infoSHIFTER.textContent = `Gear Mode: ${shifterPosition}`
     
     if (carMetrics.gear === 1)
       this.infoGEAR.textContent = `Gear: ${carMetrics.gear}st`

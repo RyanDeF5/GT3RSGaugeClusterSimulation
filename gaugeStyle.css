@@ -71,7 +71,7 @@
   font-family: "Barlow Semi Condensed";
   position: absolute;
   text-align: right;
-  right: 25px;
+  right: 20px;
   top: -5px;
   font-weight: 600;
   font-size: 40px;
@@ -86,6 +86,45 @@
   left: 90px;
   bottom: 3px;
   color: black;
+}
+
+#gearIndicatorContainer{
+  height: 75px;
+  width: 28px;
+  left: 125px;
+  bottom: 0px;
+  position: absolute;
+  /* border-style: solid;
+  border-color: white;
+  border-width: 1px; */
+}
+
+#P{
+  left: 16px;
+}
+#R{
+  left: 16px;
+  top: 14px;
+}
+#N{
+  left: 16px;
+  top: 29px;
+}
+#D{
+  left: 16px;
+  top: 45px;
+}
+#M{
+  left: 4px;
+  top: 45px;
+}
+
+.gearLetter{
+  position: absolute;
+  font-size: 17px;
+  font-family: "Barlow Semi Condensed";
+  font-weight: 800;
+  color: white;
 }
 
 .rpmIndicator{

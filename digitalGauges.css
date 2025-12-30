@@ -63,6 +63,11 @@
   left: 30px;
 }
 
+#infographicShifterPos{
+  top:140px;
+  left: 30px;
+}
+
 #porscheLogoRight, #porscheLogoLeft{
   height: 125px;
   position: absolute;
@@ -74,10 +79,15 @@
   z-index: 4;
 }
 
-.carModelAnimation{
+.carModelAnimation {
   position: absolute;
-  width: 240px; height: 240px;
-  left: 30px;
-  top: 30px;
-  opacity: 0;
+  width: 370px; 
+  height: 370px;
+  left: -33px;
+  top: -43px;
+  position: absolute;
+  opacity: 0%;
+  /* The Mask: Center is solid (black), edges are transparent */
+  -webkit-mask-image: radial-gradient(circle, black 55%, transparent 0%);
+  mask-image: radial-gradient(circle, black 55%, transparent 0%);
 }

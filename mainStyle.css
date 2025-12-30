@@ -39,7 +39,7 @@ div{
   cursor: pointer;
 }
 
-#carButton, #UpButton, #DownButton, #carButtonTest,#DownShiftButton, #UpShiftButton{
+#carButton, #UpButton, #DownButton, #carButtonTest,#DownShiftButton, #UpShiftButton, #parkButton, #reverseButton, #neutralButton, #driveButton{
   margin-left: 10px; margin-right: 10px;
   width: 120px;
   height: 50px;
@@ -48,6 +48,16 @@ div{
   transition: color 0.3s ease-out; 
   transition: background-color 0.3s ease-out; 
 }
+
+#parkButton, #reverseButton, #neutralButton, #driveButton {
+  position: absolute;
+  left: 660px;
+  height: 100px;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+#reverseButton {left:810px;} #neutralButton{left: 960px;} #driveButton {left: 1110px;} #parkButton{color: red;}
 
 #TransmissionToggle {
   margin-left: 10px; margin-right: 10px;

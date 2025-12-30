@@ -43,6 +43,12 @@ document.getElementById("carButtonOnOff").addEventListener("click", togglePhysic
 document.getElementById("DownShiftButton").addEventListener("click", shiftDown)
 document.getElementById("UpShiftButton").addEventListener("click", shiftUp)
 document.getElementById("carButtonTest").addEventListener("click", spanThroughGauge);
+
+document.getElementById("parkButton").addEventListener("click", park)
+document.getElementById("reverseButton").addEventListener("click", reverse)
+document.getElementById("neutralButton").addEventListener("click", neutral)
+document.getElementById("driveButton").addEventListener("click", drive)
+
 gasPedal.addEventListener('mousedown', handlePressStart);
 gasPedal.addEventListener('mouseup', handlePressEnd);
 gasPedal.addEventListener('mouseleave', handlePressEnd); 
@@ -81,19 +87,24 @@ function toggleOnOff(){
     rpmIndicatorLeft.turnOffAll(); rpmIndicatorRight.turnOffAll();
     document.getElementById("OnOffIndicator").textContent = 'Power: ON'
     digitalIndicator.setOn()
+    digitalIndicator.select("P"); 
     startUpAnimation()
     needle.setAngle(engineIdle);
   }
 }
 
 function toggleTrans(){
-  if (gearBox.manualGearbox === true) {
+  if (gearBox.manualGearbox === true && !gaugeBusy && on) {
     gearBox.setAutomatic();
     document.getElementById("TransmissionToggle").textContent = 'Trans: Automatic'
+    digitalIndicator.select("D");
   }
   else {
+    if (!gaugeBusy && on) {
     gearBox.setManual();
     document.getElementById("TransmissionToggle").textContent = 'Trans: Manual'
+    digitalIndicator.select("M");
+    }
   }
 }
 
@@ -159,6 +170,23 @@ function shiftUp(){
   if (!gaugeBusy && on) gearBox.upShift();
 }
 
+function park(){
+   if (!gaugeBusy && on) digitalIndicator.select("P");
+}
+
+function reverse(){
+   if (!gaugeBusy && on) digitalIndicator.select("R");
+}
+
+function neutral(){
+   if (!gaugeBusy && on) digitalIndicator.select("N");
+}
+
+function drive(){
+   if (!gaugeBusy && on) digitalIndicator.select("D");
+}
+
+
 // ================================================================
 
 
@@ -168,7 +196,7 @@ function gaugeSetValue(value){
 }
 
 function throttle(){
-  if (on && !gaugeBusy){
+  if (on && !gaugeBusy && carMetrics.shifterPosition !== "P"){
     let newAngle = carMetrics.needleAngle - carMetrics.throttleValue;
     if (newAngle <= -180) { 
       carMetrics.needleAngle = -180;

@@ -27,6 +27,11 @@ export class DigitalGauge {
     document.getElementById("mphSymbol").style.color = "black"
     document.getElementById("gearNumber").style.transition = `color 1s ease-out` 
     document.getElementById("gearNumber").style.color = "black"
+    document.getElementById("P").style.color = "black"
+    document.getElementById("R").style.color = "black"
+    document.getElementById("N").style.color = "black"
+    document.getElementById("D").style.color = "black"
+    document.getElementById("M").style.color = "black"
   }
 
   setOn(){
@@ -35,5 +40,19 @@ export class DigitalGauge {
     document.getElementById("mphSymbol").style.color = 'white'
     document.getElementById("gearNumber").style.transition = `color 0s ease-out` 
     document.getElementById("gearNumber").style.color = "white"
+    document.getElementById("P").style.color = "white"
+    document.getElementById("R").style.color = "white"
+    document.getElementById("N").style.color = "white"
+    document.getElementById("D").style.color = "white"
+  }
+
+  select(gearLetter){
+    document.getElementById("P").style.color = "white"
+    document.getElementById("R").style.color = "white"
+    document.getElementById("N").style.color = "white"
+    document.getElementById("D").style.color = "white"
+    document.getElementById("M").style.color = "black"
+    document.getElementById(gearLetter).style.color = "red"
+    carMetrics.shifterPosition = gearLetter
   }
 }

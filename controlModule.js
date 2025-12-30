@@ -3,7 +3,8 @@ export const carMetrics = {
   needleAngle: 0,
   scaledRPM: 0,
   gear: 1,
-  throttleValue: 6
+  throttleValue: 6,
+  shifterPosition: "None"
 }
 
 export function update(){

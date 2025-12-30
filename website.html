@@ -62,20 +62,28 @@
       <div id="digitalGaugeContainer">
         <div id="digitalGauge">0</div>
         <div id="mphSymbol">mph</div>
+        <div id="gearIndicatorContainer">
+          <div class="gearLetter" id="P" >P</div>
+          <div class="gearLetter" id="R" >R</div>
+          <div class="gearLetter" id="N" >N</div>
+          <div class="gearLetter" id="D" >D</div>
+          <div class="gearLetter" id="M" >M</div>
+        </div>
         <div id="gearNumber">0</div>
       </div>
       <!-- #endregion -->
       <div id="GaugeRightContainer">
         <img id="porscheLogoRight" src="images/porscheLogo5.gif">
-        <video class="carModelAnimation" id="carModel1" src="images/carModel1.mp4" muted playsinline></video>
+        <video class="carModelAnimation" id="carModel1" src="images/carModel3.mp4" muted playsinline></video>
       </div>
       <div id="RightMask1"></div>
       <div id="GaugeLeftContainer">
         <img id="porscheLogoLeft" src="images/porscheLogo5.gif">
         <div class="infographic" id="infographicRPM">RPM: 0</div>
         <div class="infographic" id="infographicGEAR">Current: 0</div>
+        <div class="infographic" id="infographicShifterPos">Current: 0</div>
       </div>
-      <div id="LeftMask1"></div>
+      <div id="LeftMask1">Gear Mode: None</div>
     </div>
     <div id="controlRow">
         <div id="controlColum">
@@ -96,6 +104,10 @@
         <div id="buttonRow">
           <button id="pedalBrake">Brake</button>
           <button id="pedalGas">Throttle</button>
+          <button id="parkButton">P</button>
+          <button id="reverseButton">R</button>
+          <button id="neutralButton">N</button>
+          <button id="driveButton">D</button>
         </div>
       </div>
     </div>
