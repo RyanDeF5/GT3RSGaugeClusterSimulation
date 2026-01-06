@@ -31,7 +31,7 @@ export class InfotainmentSystem{
     this.infoGEAR.style.color = "#cfd3d4"
     this.infoSHIFTER.style.color = "#cfd3d4"
     this.carModel1.style.opacity = 1;
-    this.carModel1.play(); 
+    this.playForwardNormally(this.carModel1);
     this.setAlert("Car Is In Park!", 1500);
     }, 3500)
   }
@@ -53,11 +53,11 @@ export class InfotainmentSystem{
     this.infoRPM.textContent = `RPM: ${Math.round(carMetrics.scaledRPM)}`
 
     let shifterPosition; 
-    if (carMetrics.shifterPosition == "P") {shifterPosition = "Park"}
+    if (carMetrics.shifterPosition == "P") {shifterPosition = "Park"; this.playForwardNormally(this.carModel1);}
     else if (carMetrics.shifterPosition == "R") {shifterPosition = "Reverse"}
     else if (carMetrics.shifterPosition == "N") {shifterPosition = "Neutral"}
-    else if (carMetrics.shifterPosition == "D") {shifterPosition = "Drive (Normal)"}
-    else if (carMetrics.shifterPosition == "M") {shifterPosition = "Drive (Manual)"}
+    else if (carMetrics.shifterPosition == "D") {shifterPosition = "Drive (Normal)"; this.playInReverse(this.carModel1);}
+    else if (carMetrics.shifterPosition == "M") {shifterPosition = "Drive (Manual)"; this.playInReverse(this.carModel1);}
 
     this.infoSHIFTER.textContent = `Gear Mode: ${shifterPosition}`
 
@@ -91,6 +91,45 @@ export class InfotainmentSystem{
         setTimeout(() => {this.displayingMessage = false;}, 500)
       }, timeDisplayed)
     }
+  }
+
+  // Function from ChatGPT
+  playInReverse(videoElement) {
+    // 1. Pause the video if it's currently playing forward
+    videoElement.pause();
+
+    // 2. Create an interval that runs every 50ms (~20fps)
+    const reverseInterval = setInterval(() => {
+        if (videoElement.currentTime > 0) {
+            // Move back 0.05 seconds
+            videoElement.currentTime -= 0.10;
+        } else {
+            // Stop once we hit the beginning
+            clearInterval(reverseInterval);
+        }
+    }, 200);
+    
+    // Optional: Return the interval ID so you can stop it later
+    return reverseInterval;
+}
+
+playForwardNormally(videoElement) {
+    // 1. Pause the video if it's currently playing forward
+    videoElement.pause();
+
+    // 2. Create an interval that runs every 50ms (~20fps)
+    const reverseInterval = setInterval(() => {
+        if (videoElement.currentTime < videoElement.duration) {
+            // Move forward 0.05 seconds
+            videoElement.currentTime += 0.10;
+        } else {
+            // Stop once we hit the beginning
+            clearInterval(reverseInterval);
+        }
+    }, 200);
+    
+    // Optional: Return the interval ID so you can stop it later
+    return reverseInterval;
   }
 
 }
